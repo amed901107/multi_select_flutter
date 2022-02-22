@@ -200,6 +200,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
   final TextStyle? searchTextStyle;
   final TextStyle? searchHintStyle;
   final Color? checkColor;
+  final double? heightContainer;
   FormFieldState<List<V>>? state;
 
   _MultiSelectDialogFieldView({
@@ -230,6 +231,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
     this.searchHintStyle,
     this.selectedItemsTextStyle,
     this.checkColor,
+    this.heightContainer,
   });
 
   /// This constructor allows a FormFieldState to be passed in. Called by MultiSelectDialogField.
@@ -262,6 +264,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
         searchTextStyle = field.searchTextStyle,
         selectedItemsTextStyle = field.selectedItemsTextStyle,
         checkColor = field.checkColor,
+        heightContainer = field.heightContainer,
         state = state;
 
   @override
@@ -388,6 +391,7 @@ class __MultiSelectDialogFieldViewState<V>
             _showDialog(context);
           },
           child: Container(
+            height: widget.heightContainer,
             decoration: widget.state != null
                 ? widget.decoration ??
                     BoxDecoration(
