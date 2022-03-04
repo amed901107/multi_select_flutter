@@ -1,3 +1,3 @@
 class MultiSelectDialogFieldController<V> {
-  List<V> selectedItems = [];
+  List<V?> selectedItems = [];
 }
